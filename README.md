@@ -41,11 +41,15 @@ $ serverless config credentials --provider aws --key xxxxxxxxxx --secret xxxxxxx
 
 _El proyecto levantó dos servicios lambdas que pueden probar por [postman](https://www.postman.com/)_
 
+_En este método GET obtiene los datos del planeta para visualizar, se puede enviar mediante query el número del planeta a visualizar. 
+Adicionalmente en el mismo GET hay un atributo llamado my_data donde se muestra los campos seteados por el método POST_
 ```
-GET - https://44918vkn7d.execute-api.us-east-1.amazonaws.com/dev/
+GET - https://44918vkn7d.execute-api.us-east-1.amazonaws.com/dev/?planet=2
 ```
+_En este método POST se envía mediante query los datos del planeta que deseas setear al dynamodb, lo cuál lo puedes visualizar desde el get mencionado
+previamente_
 ```
-POST - https://44918vkn7d.execute-api.us-east-1.amazonaws.com/dev/
+POST - https://44918vkn7d.execute-api.us-east-1.amazonaws.com/dev/?planet=1
 ```
 
 ### Testing ⚙️
