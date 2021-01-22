@@ -7,7 +7,8 @@ AWS.config.update({ region: 'us-east-1' })
 const dynamoDb = new AWS.DynamoDB.DocumentClient()
 
 app.get('/', async (req, res) => {
-  let result = await get_planet()
+  const { planet } = req.query
+  let result = await get_planet(planet)
   //defino la tabla
   const params = { TableName: 'planetas' }
   // obtengo los items dynamodb
@@ -23,8 +24,8 @@ app.get('/', async (req, res) => {
   })
 })
 
-const get_planet = async () => {
-  const awapi_url = "http://swapi.py4e.com/api/planets/1/"
+const get_planet = async (number = 1) => {
+  const awapi_url = "http://swapi.py4e.com/api/planets/" + number
   try {
     const response = await axios.get(awapi_url)
     const {
