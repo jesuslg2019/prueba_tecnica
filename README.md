@@ -46,8 +46,7 @@ Adicionalmente en el mismo GET hay un atributo llamado **my_data** donde se mues
 ```
 GET - https://44918vkn7d.execute-api.us-east-1.amazonaws.com/dev/?planet=2
 ```
-_En este método POST se envía mediante query los datos del planeta que deseas setear al dynamodb, lo cuál lo puedes visualizar desde el get mencionado
-previamente_
+_En este método POST se envía mediante query el número del planeta, lo cual obtiene los datos del planeta que se inserta de manera automática en el dynamoDB. Lo cuál lo puedes visualizar desde el GET mencionado previamente en el atributo **my_data**_
 ```
 POST - https://44918vkn7d.execute-api.us-east-1.amazonaws.com/dev/?planet=1
 ```
